@@ -17,7 +17,7 @@ import { Component, OnInit } from '@angular/core';
 
 
 @Component({
-  selector: 'Planets-root',
+  selector: 'sec-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
   //,providers: [PeopleService]

@@ -4,28 +4,8 @@ import { PeopleService } from './people.service';
 
 @Component({
   selector: 'people-list',
-  template: `
-  <section>
-    <section *ngIf="isLoading && !errorMessage">
-    Loading our hyperdrives!!! Retrieving data...
-    </section>
-      <ul>
-        <!-- this is the new syntax for ng-repeat -->
-        <li *ngFor="let person of people">
-            <!-- a href="#" [routerLink]="['/persons', person.id]" >
-          {{person.name}}
-          </a -->
-          <a href="#" >
-          {{person.name}}
-          </a>
-        </li>
-      </ul>
-      <section *ngIf="errorMessage">
-        {{errorMessage}}
-      </section>
-  </section>
-  `
-  ,providers: [PeopleService]
+  templateUrl: './people-list.component.html',
+  providers: [PeopleService]
 })
 export class PeopleListComponent implements OnInit{
   people: Person[] = [];
