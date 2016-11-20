@@ -25,6 +25,7 @@ import { PeopleService } from './people.service';
       </section>
   </section>
   `
+  ,providers: [PeopleService]
 })
 export class PeopleListComponent implements OnInit{
   people: Person[] = [];
