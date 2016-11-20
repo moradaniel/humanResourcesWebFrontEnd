@@ -1,3 +1,18 @@
 <h1>
   {{title}}
 </h1>
+
+
+
+<people-list></people-list>
+
+<my-component id="1" name="Facundo"></my-component>
+<my-component id="2" name="Daniel"></my-component>
+<my-component id="3" name="Sofia"></my-component>
+<my-component id="4" name="Guillermo"></my-component>
+
+<ul>
+  <li *ngFor="let planet of planetsList">{{planet.name}}</li>
+</ul>
+
+
