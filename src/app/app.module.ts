@@ -25,6 +25,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
+
 //import { PlanetsService } from './shared';
 
 //import { routing } from './app.routes';
@@ -53,8 +55,10 @@ import { PlanetsListComponent } from './planets/planets-list.component';
  //   routing,
     FormsModule,
     HttpModule,
-    PeopleModule
+    PeopleModule,
+    AlertModule
   ],
+
   //providers: [PlanetsService],
   bootstrap: [AppComponent]
 })
