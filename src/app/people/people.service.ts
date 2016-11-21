@@ -3,10 +3,14 @@ import { Http, Response, Headers} from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { Person } from './person';
 
+import { environment } from '../../environments/environment';
+
 @Injectable()
 export class PeopleService{
   //private baseUrl: string = 'http://swapi.co/api';
-  private baseUrl: string = 'http://localhost:3000';
+  //private baseUrl: string = 'http://localhost:4200/api';
+  private baseUrl: string = environment.backend.baseURL;
+  //private baseUrl: string = '/api';
 
 
   constructor(private http : Http){
