@@ -39,8 +39,9 @@ import { MyComponent } from './my-component/my-component.component';
 import {PeopleModule} from "./people/people.module";
 //import {PlanetsModule} from "./people/people.module";
 
-import { PeopleListComponent } from './people/people-list.component';
+//import { PeopleListComponent } from './people/people-list.component';
 import { PlanetsListComponent } from './planets/planets-list.component';
+import {PeopleViewDetailsComponent} from "./people/people-view-details.component";
 
 @NgModule({
   declarations: [
@@ -48,14 +49,16 @@ import { PlanetsListComponent } from './planets/planets-list.component';
     MyComponent
     //,PeopleListComponent
     ,PlanetsListComponent
-
+   // ,PeopleViewDetailsComponent
   ],
   imports: [
     BrowserModule,
  //   routing,
     FormsModule,
     HttpModule,
+    //Custom modules
     PeopleModule,
+    //Bootstrap modules
     AlertModule
   ],
 

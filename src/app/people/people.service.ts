@@ -25,10 +25,20 @@ export class PeopleService{
   }
 
   get(id: number): Observable<Person> {
-    let person$ = this.http
+    let person$  = this.http
       .get(`${this.baseUrl}/users/${id}`, {headers: this.getHeaders()})
-      .map(mapPerson);
-      return person$;
+      .map(mapPerson)
+      .catch(handleError);
+
+    //let arrayPersons = <Array<Person>>person$;
+
+    //<Array<number>>x
+
+      //if(Array.isArray(person$) && Array.length(person$)>0){
+
+     // }
+      //return person$[0];
+    return person$;
   }
 
   save(person: Person) : Observable<Response>{
@@ -52,11 +62,28 @@ function mapPersons(response:Response): Person[]{
 
    // The response of the API has a results
    // property with the actual results
-   return response.json().results.map(toPerson)
+   return response.json().results.map(toPerson);
+}
+
+
+function mapPerson(response:Response): Person{
+  // toPerson looks just like in the previous example
+ // return toPerson(response.results.json());
+
+  let persons:Array<Person> = mapPersons(response);//.json().results.map(toPerson);
+
+  if(persons && persons.length===1){
+    return persons[0];
+  }else{
+    return null;
+  }
+
+
+ //return response.json().results(toPerson);
 }
 
 function toPerson(r:any): Person{
-  let person = <Person>({
+  let person = <Person>( {
     //id: extractId(r),
     id:r.id,
     url: r.url,
@@ -75,10 +102,7 @@ function extractId(personData:any){
   return parseInt(extractedId);
 }
 
-function mapPerson(response:Response): Person{
-  // toPerson looks just like in the previous example
-  return toPerson(response.json());
-}
+
 
 // this could also be a private method of the component class
 function handleError (error: any) {
