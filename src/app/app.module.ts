@@ -39,9 +39,9 @@ import { MyComponent } from './my-component/my-component.component';
 import {PeopleModule} from "./people/people.module";
 //import {PlanetsModule} from "./people/people.module";
 
-//import { PeopleListComponent } from './people/people-list.component';
 import { PlanetsListComponent } from './planets/planets-list.component';
-import {PeopleViewDetailsComponent} from "./people/people-view-details.component";
+import { ModalModule } from 'ng2-bootstrap/ng2-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -60,6 +60,8 @@ import {PeopleViewDetailsComponent} from "./people/people-view-details.component
     PeopleModule,
     //Bootstrap modules
     AlertModule
+    ,ModalModule
+
   ],
 
   //providers: [PlanetsService],

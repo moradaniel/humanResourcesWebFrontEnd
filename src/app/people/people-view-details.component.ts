@@ -8,19 +8,9 @@ import { PeopleService } from './people.service';
   providers: [PeopleService]
 })
 export class PeopleViewDetailsComponent implements OnInit{
-  @Input()  id:number;
+ // @Input()  id:number;
 
-  person: Person = {
-
-    id: 0
-    , name: ""
-    , weight: 0
-    , height: 0
-  // it is optional because I know it
-  // doesn't exist in the API that we will
-  // consume in the next exercise :)
-  ,  profession: ""
-}
+  @Input() person: Person;
 
   errorMessage: string = '';
   isLoading: boolean = true;
@@ -28,11 +18,15 @@ export class PeopleViewDetailsComponent implements OnInit{
   constructor(private peopleService : PeopleService){ }
 
   ngOnInit(){
-    this.peopleService
+   /* this.peopleService
       .get(this.id)
       .subscribe(
-         /* happy path */ p => this.person = p,
-         /* error path */ e => this.errorMessage = e,
-         /* onComplete */ () => this.isLoading = false);
+         // happy path
+          p => this.person = p,
+         // error path
+          e  => this.errorMessage = e,
+          // onComplete
+           () => this.isLoading = false);
+           */
   }
 }

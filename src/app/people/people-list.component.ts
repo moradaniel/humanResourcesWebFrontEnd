@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Person } from './person';
 import { PeopleService } from './people.service';
 import {ContentFilterPipe} from './content-filter.pipe'
+import {PeopleViewDetailsModalComponent} from "./people-view-details-modal.component";
 
 @Component({
   selector: 'people-list',
   templateUrl: './people-list.component.html',
-  providers: [PeopleService,ContentFilterPipe]
+  providers: [PeopleService,ContentFilterPipe,PeopleViewDetailsModalComponent]
 })
 export class PeopleListComponent implements OnInit{
   private _index = 0;

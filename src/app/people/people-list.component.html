@@ -1,3 +1,12 @@
+
+
+<people-view-details [person]="people[0]"></people-view-details>
+
+<div>
+  <people-view-details-modal #c="child"></people-view-details-modal>
+  <!-- button type="button" class="btn btn-primary" (click)="c.viewScheduleDetails(399)">open</button -->
+</div>
+
 <section>
   <section *ngIf="isLoading && !errorMessage">
     Loading our hyperdrives!!! Retrieving data...
@@ -56,9 +65,11 @@
           </td>
           <td>def@somemail.com</td>
           <td>
-            <button class="btn btn-info btn-sm">
-              Details
+
+            <button type="button" class="btn btn-info btn-sm" (click)="c.viewPersonDetails(person)">
+                Details
             </button>
+
               <button class="btn btn-warning btn-sm">
               Edit
              </button>

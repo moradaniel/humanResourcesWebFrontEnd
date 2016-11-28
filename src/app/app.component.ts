@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewContainerRef} from '@angular/core';
 
 
 @Component({
@@ -15,6 +15,13 @@ export class AppComponent implements OnInit {
   constructor(
     private _planetservice: PlanetsService) {}
 */
+  private viewContainerRef: ViewContainerRef;
+
+  public constructor(viewContainerRef:ViewContainerRef) {
+    // You need this small hack in order to catch application root view container ref
+    this.viewContainerRef = viewContainerRef;
+  }
+
   ngOnInit() {
     //this._planetservice.getPlanets().then(planets => this.planetsList = planets);
   }
