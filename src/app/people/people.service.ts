@@ -41,15 +41,28 @@ export class PeopleService{
     return person$;
   }
 
-  save(person: Person) : Observable<Response>{
+  saveOrUpdate(person: Person) : Observable<Response>{
     // this won't actually work because the StarWars API doesn't
     // is read-only. But it would look like this:
+
+    console.log(JSON.stringify(person));
+
+    if(person.id){
+      return this.http
+        .put(`${this.baseUrl}/users/`, JSON.stringify(person), {headers: this.getHeaders()})
+        .map(mapPersons)
+        .catch(handleError);
+    }
     return this.http
-      .put(`${this.baseUrl}/users/${person.id}`, JSON.stringify(person), {headers: this.getHeaders()});
+      .post(`${this.baseUrl}/users/`, JSON.stringify(person), {headers: this.getHeaders()})
+      .map(mapPersons)
+      .catch(handleError);
+
   }
 
   private getHeaders(){
     let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
     headers.append('Accept', 'application/json');
     console.log(JSON.stringify(headers));
     return headers;
@@ -85,11 +98,11 @@ function mapPerson(response:Response): Person{
 function toPerson(r:any): Person{
   let person = <Person>( {
     //id: extractId(r),
-    id:r.id,
-    url: r.url,
-    name: r.name,
-    weight: r.mass,
-    height: r.height,
+    id:r.id
+    //,url: r.url,
+    ,name: r.name
+    //,address: r.address,
+    //,height: r.height
   });
   console.log('Parsed person:', person);
   return person;

@@ -6,16 +6,22 @@ import {PeopleViewDetailsComponent} from "./people-view-details.component";
 import {ContentFilterPipe} from "./content-filter.pipe";
 import {PeopleViewDetailsModalComponent} from "./people-view-details-modal.component";
 import { ModalModule } from 'ng2-bootstrap/ng2-bootstrap';
+import {PeopleManagementComponent} from "./people-management.component";
+import {PeopleEditComponent} from "./people-edit.component";
 
 @NgModule({
   imports: [BrowserModule,ModalModule],
-  declarations: [PeopleListComponent,
+  declarations: [PeopleManagementComponent,
+                 PeopleListComponent,
                  PeopleViewDetailsComponent,
-                 PeopleViewDetailsModalComponent,
-                 ContentFilterPipe],
-  exports: [PeopleListComponent,
+                 PeopleViewDetailsModalComponent
+                ,PeopleEditComponent
+                ,ContentFilterPipe],
+  exports: [PeopleManagementComponent,
+            PeopleListComponent,
             PeopleViewDetailsComponent,
-            PeopleViewDetailsModalComponent,
-            ContentFilterPipe]
+            PeopleViewDetailsModalComponent
+            ,PeopleEditComponent
+            ,ContentFilterPipe]
 })
 export class PeopleModule { }

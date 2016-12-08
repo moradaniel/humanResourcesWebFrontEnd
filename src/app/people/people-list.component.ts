@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import { Person } from './person';
 import { PeopleService } from './people.service';
 import {ContentFilterPipe} from './content-filter.pipe'
@@ -15,6 +15,8 @@ export class PeopleListComponent implements OnInit{
   errorMessage: string = '';
   isLoading: boolean = true;
 
+  @Output() onView = new EventEmitter<Person>();
+
   constructor(private peopleService : PeopleService){ }
 
   ngOnInit(){
@@ -26,7 +28,12 @@ export class PeopleListComponent implements OnInit{
          /* onComplete */ () => this.isLoading = false);
   }
 
-  public enableAdd() {
+
+  public viewPerson(person:Person) {
+    this.onView.emit(person);
+  }
+
+  /*public enableAdd() {
     return this._index < this.people.length;
   }
   public addUser() {
@@ -37,5 +44,5 @@ export class PeopleListComponent implements OnInit{
   public clearUsers() {
     //this.people = [];
     this._index = 0;
-  }
+  }*/
 }

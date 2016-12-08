@@ -1,10 +1,10 @@
-import { OurPlanetsPage } from './app.po';
+import { HumanResourcesPage } from './app.po';
 
-describe('our-planets App', function() {
-  let page: OurPlanetsPage;
+describe('human-resources-frontend App', function() {
+  let page: HumanResourcesPage;
 
   beforeEach(() => {
-    page = new OurPlanetsPage();
+    page = new HumanResourcesPage();
   });
 
   it('should display message saying app works', () => {

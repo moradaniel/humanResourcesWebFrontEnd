@@ -1,0 +1,31 @@
+<div>
+  <people-view-details-modal #c="child"></people-view-details-modal>
+</div>
+
+<div class="container-fluid">
+  <h1>People Management</h1>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <button class="btn btn-primary btn-lg"
+              (click)="goToAdd()"
+              (onGoToAdd)="navigateTo('add')"
+      >
+        Add new Person
+      </button>
+    </div>
+  </div>
+
+
+  <people-list *ngIf="currentView == 'list'"
+               (onView)="c.viewPersonDetails($event)"
+  >
+  </people-list>
+
+  <people-edit *ngIf="currentView == 'add'"
+               (onAdded)="navigateTo('list')"
+               (onCancel)="navigateTo('list')"
+  >
+  </people-edit>
+
+</div>
