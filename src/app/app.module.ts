@@ -29,7 +29,7 @@ import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
 
 //import { PlanetsService } from './shared';
 
-//import { routing } from './app.routes';
+import { routingModule } from './app.routes';
 
 import { AppComponent } from './app.component';
 
@@ -41,6 +41,7 @@ import {PeopleModule} from "./people/people.module";
 
 import { PlanetsListComponent } from './planets/planets-list.component';
 import { ModalModule } from 'ng2-bootstrap/ng2-bootstrap';
+import {WelcomeModule} from "./welcome/welcome.module";
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { ModalModule } from 'ng2-bootstrap/ng2-bootstrap';
     //Bootstrap modules
     AlertModule
     ,ModalModule
-
+    ,WelcomeModule
+    ,routingModule
   ],
 
   //providers: [PlanetsService],
