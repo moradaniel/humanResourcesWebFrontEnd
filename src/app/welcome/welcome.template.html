@@ -9,5 +9,11 @@
     <p><a class="btn btn-primary btn-lg" role="button">
       Learn more &raquo;
     </a></p>
+
+    <div class="text-center" *ngIf="!user">
+      <a class="btn btn-primary" routerLink="/login">Login</a>
+      <!-- a class="btn btn-primary" routerLink="/register">Register</a -->
+    </div>
+
   </div>
 </div>

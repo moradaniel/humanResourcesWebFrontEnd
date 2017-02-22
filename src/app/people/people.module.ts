@@ -5,7 +5,7 @@ import {PeopleListComponent} from './people-list.component';
 import {PeopleViewDetailsComponent} from "./people-view-details.component";
 import {ContentFilterPipe} from "./content-filter.pipe";
 import {PeopleViewDetailsModalComponent} from "./people-view-details-modal.component";
-import { ModalModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { ModalModule } from 'ng2-bootstrap';
 import {PeopleManagementComponent} from "./people-management.component";
 import {PeopleEditComponent} from "./people-edit.component";
 

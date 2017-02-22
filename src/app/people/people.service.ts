@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Headers} from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { Person } from './person';
+import { HttpService } from '../http.service';
 
 import { environment } from '../../environments/environment';
 
@@ -9,16 +10,14 @@ import { environment } from '../../environments/environment';
 export class PeopleService{
   //private baseUrl: string = 'http://swapi.co/api';
   //private baseUrl: string = 'http://localhost:4200/api';
-  private baseUrl: string = environment.backend.baseURL;
+  //private baseUrl: string = environment.backend.baseURL;
   //private baseUrl: string = '/api';
 
-
-  constructor(private http : Http){
+  constructor(private http: HttpService){
   }
 
   getAll(): Observable<Person[]>{
-    let people$ = this.http
-      .get(`${this.baseUrl}/users`, {headers: this.getHeaders()})
+    let people$ = this.http.get('/accounts')
       .map(mapPersons)
       .catch(handleError);
       return people$;
@@ -26,7 +25,7 @@ export class PeopleService{
 
   get(id: number): Observable<Person> {
     let person$  = this.http
-      .get(`${this.baseUrl}/users/${id}`, {headers: this.getHeaders()})
+      .get(`/users/${id}`)
       .map(mapPerson)
       .catch(handleError);
 
@@ -49,24 +48,18 @@ export class PeopleService{
 
     if(person.id){
       return this.http
-        .put(`${this.baseUrl}/users/`, JSON.stringify(person), {headers: this.getHeaders()})
+        .put(`/users/`, JSON.stringify(person))
         .map(mapPersons)
         .catch(handleError);
     }
     return this.http
-      .post(`${this.baseUrl}/users/`, JSON.stringify(person), {headers: this.getHeaders()})
+      .post(`/users/`, JSON.stringify(person))
       .map(mapPersons)
       .catch(handleError);
 
   }
 
-  private getHeaders(){
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    headers.append('Accept', 'application/json');
-    console.log(JSON.stringify(headers));
-    return headers;
-  }
+
 }
 
 function mapPersons(response:Response): Person[]{
@@ -75,7 +68,9 @@ function mapPersons(response:Response): Person[]{
 
    // The response of the API has a results
    // property with the actual results
-   return response.json().results.map(toPerson);
+
+  //return response.json().results.map(toPerson);
+  return response.json().content.map(toPerson);
 }
 
 

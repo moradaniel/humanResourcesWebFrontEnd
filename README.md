@@ -1,6 +1,6 @@
 # HumanResources Angular 2 Front-End
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.17.
+This project was generated with [angular-cli](https://github.com/angular/angular-cli).
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -49,6 +49,9 @@ Build for production
 
 `ng build --prod`
 
+## ChangeLog
+
+- Added login form with basic support for JWT tokens
 
 ##Credits
 

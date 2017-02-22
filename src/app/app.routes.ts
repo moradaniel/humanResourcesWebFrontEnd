@@ -30,14 +30,19 @@ import {Routes, RouterModule} from '@angular/router';
 import {WelcomeComponent} from './welcome/welcome.component';
 //import {DiveLogComponent} from './logs/dive-log.component';
 import {PeopleManagementComponent} from './people/people-management.component';
+import {LoginComponent} from './security/authentication/login/login.component';
 
 
 
 
 const routes: Routes = [
 //  { path: 'divelogs', component: DiveLogComponent },
-  { path: 'accounts', component: PeopleManagementComponent },
-  { path: '', pathMatch: 'full', component: WelcomeComponent }
+
+  { path: '', pathMatch: 'full', component: WelcomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'accounts', component: PeopleManagementComponent }
+
+
 ];
 
 export const routingModule = RouterModule.forRoot(routes);
