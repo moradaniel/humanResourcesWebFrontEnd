@@ -30,11 +30,15 @@ Run `ng github-pages:deploy` to deploy to Github Pages.
 
 To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
+
+
+
 ##Development
 
 To start webpack server with live reload capabilities
 
-`ng serve`
+`./node_modules/angular-cli/bin/ng serve --proxy-config proxy.conf.json --host 0.0.0.0 --port 4200`
+
 
 Enable CORS
 `ng serve --proxy-config proxy.conf.json`
@@ -45,6 +49,7 @@ Build for production
 
 `ng build --prod`
 
-Credits
+
+##Credits
 
 https://chsakell.com/2016/06/27/angular-2-crud-modals-animations-pagination-datetimepicker/
