@@ -7,7 +7,7 @@ export interface UserModel {
 }*/
 export class UserModel {
   public id: number;
-  username: string;
+  public username: string;
   money: number;
   registrationInstant: string;
 

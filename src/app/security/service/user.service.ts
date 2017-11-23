@@ -1,3 +1,10 @@
+/**
+
+ Sample: coenraadf-angular-ponyracer-master
+ 2016 - Become a ninja with Angular 2.pdf
+
+ */
+
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
@@ -28,15 +35,6 @@ export class UserService {
 
         .do(user => this.storeLoggedInUser(user));
 
-    /*
-
-     HttpPost request = new HttpPost("http://localhost:" + port + contextPath+"/api/auth/login");
-     StringEntity params = new StringEntity("{\"username\":\"" + userName + "\",\"password\":\"" + password + "\"}");
-     request.addHeader("content-type", "application/json");
-     request.addHeader("Accept", "application/json");
-     request.addHeader("X-Requested-With", "XMLHttpRequest");
-
-    * */
   }
 
   storeLoggedInUser(user) {
