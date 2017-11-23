@@ -37,8 +37,8 @@ To get more help on the `angular-cli` use `ng --help` or go check out the [Angul
 
 To start webpack server with live reload capabilities
 
-`./node_modules/angular-cli/bin/ng serve --proxy-config proxy.conf.json --host 0.0.0.0 --port 4200`
-
+`./node_modules/.bin/ng serve --proxy-config proxy.conf.json --host 0.0.0.0 --port 4200`
+`./node_modules/.bin/ng serve --proxy-config proxy.conf.spring.json  --host 0.0.0.0 --port 4200`
 
 Enable CORS
 `ng serve --proxy-config proxy.conf.json`
@@ -51,7 +51,9 @@ Build for production
 
 ## ChangeLog
 
-- Added login form with basic support for JWT tokens
+- Added login form 
+- Added HttpService with support for JWT tokens
+- Added navigation menu component
 
 ##Credits
 

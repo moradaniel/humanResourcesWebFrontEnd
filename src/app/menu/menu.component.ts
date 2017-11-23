@@ -1,3 +1,11 @@
+/**
+
+ Sample: coenraadf-angular-ponyracer-master
+ 2016 - Become a ninja with Angular 2.pdf
+
+ */
+
+
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
