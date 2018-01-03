@@ -1,8 +1,8 @@
 import	{UserModel}	from	'./user.model';
 
-describe('UserModel	unit	tests',	()	=>	{
+describe('UserModel	unit tests',	()	=>	{
 
-  it('Has	correct	title',	()	=>	{
+  it('Has	correct	username',	()	=>	{
     let	a	=	new	UserModel({username:"pepe"});
     expect(a.username).toBe("pepe");
   });
