@@ -17,19 +17,26 @@ export class PeopleListComponent implements OnInit{
 
   @Output() onView = new EventEmitter<Person>();
 
-  constructor(private peopleService : PeopleService){ }
+  constructor(private peopleService: PeopleService) { }
 
-  ngOnInit(){
+  ngOnInit() {
+    /*
+    https://stackoverflow.com/questions/35763730/difference-between-constructor-and-ngoninit
+    Mostly we use ngOnInit for all the initialization/declaration and avoid stuff to work in the constructor.
+    The constructor should only be used to initialize class members but shouldn't do actual "work".
+    So you should use constructor() to setup Dependency Injection and not much else.
+    ngOnInit() is better place to "start" - it's where/when components' bindings are resolved.
+    */
     this.peopleService
       .getAll()
       .subscribe(
-         /* happy path */ p => this.people = p,
+         /* happy path */ p => this.people = p.content,
          /* error path */ e => this.errorMessage = e,
          /* onComplete */ () => this.isLoading = false);
   }
 
 
-  public viewPerson(person:Person) {
+  public viewPerson(person: Person) {
     this.onView.emit(person);
   }
 

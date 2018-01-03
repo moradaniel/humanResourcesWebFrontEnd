@@ -1,3 +1,7 @@
+/**
+ * 2016 - Unraveling Angular 2 The Ultimate Beginners Guide with over 130 Complete Samples
+ */
+
 import {Pipe, PipeTransform} from '@angular/core';
 import {Person} from "./person";
 
